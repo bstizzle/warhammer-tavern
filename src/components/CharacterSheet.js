@@ -58,7 +58,7 @@ const CharacterSheet = () => {
           type="primary"
           onClick={() => {
             console.log(char)
-            await updateCharacter({
+            updateCharacter({
               variables: {
                 id: char._id,
                 input: {
