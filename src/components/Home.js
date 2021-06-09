@@ -9,7 +9,7 @@ const Home = () => {
   const handleClick = api => e => {
     e.preventDefault()
 
-    this.setState({ loading: true })
+    setLoading(true)
     fetch("/.netlify/functions/" + api)
       .then(response => response.json())
       .then(json => {
