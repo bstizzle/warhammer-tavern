@@ -57,7 +57,8 @@ const CharacterSheet = () => {
         <Button 
           type="primary"
           onClick={() => {
-            updateCharacter({
+            console.log(char)
+            await updateCharacter({
               variables: {
                 id: char._id,
                 input: {
@@ -72,6 +73,7 @@ const CharacterSheet = () => {
                 }
               }
             })
+            console.log("updated" + char)
           }}
         >
           Save Changes
