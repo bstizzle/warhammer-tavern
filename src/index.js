@@ -7,8 +7,10 @@ import './index.less';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const dev = process.env.NODE_ENV !== 'production'
+
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql',
+  uri: dev ? 'http://localhost:4000/graphql' : 'https://keen-curran-eabf2b.netlify.app',
   cache: new InMemoryCache({
     addTypename: false
   })
