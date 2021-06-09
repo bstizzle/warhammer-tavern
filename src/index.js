@@ -17,7 +17,7 @@ import reportWebVitals from './reportWebVitals';
 // })
 
 const client = new ApolloClient({
-  uri: "https://keen-curran-eabf2b.netlify.app/.netlify/functions/graphql",
+  uri: "/.netlify/functions/graphql",
   cache: new InMemoryCache({
     addTypename: false
   })
