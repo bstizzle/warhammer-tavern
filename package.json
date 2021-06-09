@@ -12,6 +12,7 @@
     "antd": "^4.16.2",
     "apollo-boost": "^0.4.9",
     "apollo-server-express": "^2.25.1",
+    "apollo-server-lambda": "^2.25.1",
     "craco-less": "^1.17.1",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
@@ -26,7 +27,9 @@
   "scripts": {
     "dev": "nodemon --watch server server/index.js",
     "start": "craco start",
+    "start:lambda": "netlify-lambda serve src/lambda",
     "build": "craco build",
+    "build:lambda": "netlify-lambda build src/lambda",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
@@ -47,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "netlify-lambda": "^2.0.8"
   }
 }
