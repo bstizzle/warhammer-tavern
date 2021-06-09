@@ -9,19 +9,13 @@ import reportWebVitals from './reportWebVitals';
 
 const dev = process.env.NODE_ENV !== 'production'
 
+//use local port for development, use the netlify lambda address for production
 const client = new ApolloClient({
-  uri: dev ? 'http://localhost:4000/graphql' : 'https://keen-curran-eabf2b.netlify.app/.netlify/functions/graphql',
+  uri: dev ? 'http://localhost:4000/graphql' : '/.netlify/functions/graphql',
   cache: new InMemoryCache({
     addTypename: false
   })
 })
-
-// const client = new ApolloClient({
-//   uri: "/.netlify/functions/graphql",
-//   cache: new InMemoryCache({
-//     addTypename: false
-//   })
-// })
 
 ReactDOM.render(
   <React.StrictMode>
