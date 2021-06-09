@@ -69,11 +69,13 @@ const CharacterSheet = () => {
                   talents: char.talents,
                   fate: char.fate,
                   resolve: char.resolve,
-                  currentWounds: char.currentWounds
+                  currentWounds: char.currentWounds,
+                  armor: char.armor,
+                  weapons: char.weapons,
+                  trappings: char.trappings
                 }
               }
             })
-            console.log("updated" + char)
           }}
         >
           Save Changes

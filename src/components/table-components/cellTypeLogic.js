@@ -1,6 +1,5 @@
 const statKeyStr = 'WSBSSTIAgDexIntWPFel'
 
-
 export const isBscSkillCell = (char, setChar, record, field) => {
   const index = record.key
   const numField = parseInt(field, 10)
