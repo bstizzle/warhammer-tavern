@@ -1,27 +1,35 @@
-import React, { useState } from 'react';
-
+import React from 'react';
+import { useQuery } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
 import { Col, Typography } from 'antd';
 const { Title } = Typography;
 
-const Home = () => {
-  const [loading, setLoading] = useState(false)
+const GET_CHARACTERS = gql`
+  {
+    characters {
+      bio {
+        name
+      }
+    }
+  }
+`
 
-  const handleClick = api => e => {
+const Home = () => {
+  const { loading, error, data } = useQuery(GET_CHARACTERS)
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+
+  const handleClick = e => {
     e.preventDefault()
 
-    setLoading(true)
-    fetch("/.netlify/functions/" + api)
-      .then(response => response.json())
-      .then(json => {
-        console.log(json)
-        setLoading(false)
-      })
+    console.log(data)
   }
 
   return(
     <Col>
       <Title>HOME PAGE</Title>
-      <button onClick={handleClick("characters")}>{loading ? "Loading..." : "Get characters"}</button>
+      <button onClick={handleClick}>Get characters</button>
     </Col>
   );
 }
