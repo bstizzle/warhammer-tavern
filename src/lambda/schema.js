@@ -98,7 +98,7 @@ const typeDefs = gql`
   type Query {
     characters: [Character]
     users: [User]
-    character (id: String!): Character
+    character (id: ID): Character
     user (id: String!): User
   }
 
