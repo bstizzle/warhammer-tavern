@@ -10,7 +10,7 @@ const Home = () => {
   function handleClick(e) {
     if(e.key === '/') {
       history.push(e.key)
-    } else if(e.key === '/sheet'){
+    } else if(e.key === '/list'){
       history.push(e.key)
     }
   }
@@ -22,8 +22,7 @@ const Home = () => {
       mode="inline"
     >
       <Menu.Item key="/" onClick={handleClick}>Home Page</Menu.Item>
-      <Menu.Item key="/sheet" onClick={handleClick}>Character Sheet</Menu.Item>
-      <Menu.Item key="3">Option 3</Menu.Item>
+      <Menu.Item key="/list" onClick={handleClick}>Character List</Menu.Item>
     </Menu>
   );
 }
