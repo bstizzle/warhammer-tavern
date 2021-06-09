@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 const dev = process.env.NODE_ENV !== 'production'
 
 const client = new ApolloClient({
-  uri: dev ? 'http://localhost:4000/graphql' : 'https://keen-curran-eabf2b.netlify.app',
+  uri: dev ? 'http://localhost:4000/graphql' : 'https://keen-curran-eabf2b.netlify.app/graphql',
   cache: new InMemoryCache({
     addTypename: false
   })
