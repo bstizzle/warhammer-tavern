@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
+// import { useHistory } from 'react-router-dom';
 import netlifyIdentity from 'netlify-identity-widget';
 import { Col, Typography, Button } from 'antd';
 const { Title } = Typography;
 
 const Login = ({ user }) => {
-  const history = useHistory();
+  // const history = useHistory();
   // useEffect(() => {
   //   if(user) {
   //     history.push("/home")
