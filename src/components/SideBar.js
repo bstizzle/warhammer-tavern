@@ -12,8 +12,6 @@ const Home = () => {
       history.push(e.key)
     } else if(e.key === '/list'){
       history.push(e.key)
-    } else if(e.key === '/sheet'){
-      history.push(e.key)
     }
   }
 
@@ -25,7 +23,6 @@ const Home = () => {
     >
       <Menu.Item key="/" onClick={handleClick}>Home Page</Menu.Item>
       <Menu.Item key="/list" onClick={handleClick}>Character List</Menu.Item>
-      <Menu.Item key="/sheet" onClick={handleClick}>Character Sheet</Menu.Item>
     </Menu>
   );
 }
