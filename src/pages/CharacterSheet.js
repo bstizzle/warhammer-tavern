@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Row, Col, Button } from 'antd';
-import { CharContext } from './CharContextProvider';
-import { Stats, DetailSelector, Bio, Fate, Resolve, Wounds } from './bio-components/bioExport';
+import { CharContext } from '../components/CharContextProvider';
+import { Stats, DetailSelector, Bio, Fate, Resolve, Wounds } from '../components/bio-components/bioExport';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 

@@ -8,11 +8,7 @@ const SideBar = () => {
   const path = history.location.pathname
 
   function handleClick(e) {
-    if(e.key === '/') {
-      history.push(e.key)
-    } else if(e.key === '/list'){
-      history.push(e.key)
-    }
+    history.push(e.key)
   }
 
   return(

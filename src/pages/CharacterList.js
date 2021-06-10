@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import netlifyIdentity from "netlify-identity-widget";
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 import {
   Row,
   Col,

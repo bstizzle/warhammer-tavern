@@ -1,33 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 
+//context and auth imports
 import { CharContextProvider } from './components/CharContextProvider';
 import netlifyIdentity from "netlify-identity-widget";
 
-import CharacterList from './components/CharacterList';
-import CharacterSheet from './components/CharacterSheet';
-import Banner from './components/Banner';
-import Home from './components/Home';
-import SideBar from './components/SideBar';
-import FootBar from './components/FootBar';
+//component imports
+import { Banner, FootBar, SideBar } from './components/layout-components/layoutExport';
+import { CharacterList, CharacterSheet, Home, Login } from './pages/pageExport';
+
+//styling imports
 import parchment from './textures/parchment.jpg';
-// import darkParchment from './textures/dark-parchment.jpg';
 import { Layout } from 'antd';
 const { Header, Sider, Footer, Content} = Layout;
 
 const App = () => {
-  const handleLogin = (e) => {
-    e.preventDefault()
-    netlifyIdentity.open()
-  }
+  const [currentUser, setCurrentUser] = useState(null)
+  // const fetchLogin = () => {
+  //   return fetch('/.netlify/functions/identity-login')
+  //     .then(res => res.json())
+  //     .then(json => console.log(json))
+  // }
 
-  const handleLogout = (e) => {
-    e.preventDefault()
-    netlifyIdentity.logout();
-  }
-
-  netlifyIdentity.on('login', user => console.log('login', user))
-  netlifyIdentity.on('logout', user => console.log('logout', user))
+  //netlify identity listeners to set user state
+  netlifyIdentity.on('login', user => {
+    console.log('login', user)
+    setCurrentUser(user)
+  })
+  netlifyIdentity.on('logout', user => {
+    console.log('logout', user)
+    setCurrentUser(null)
+  })
 
   return (
     <Layout style={{minHeight: '100vh'}}>
@@ -46,9 +49,10 @@ const App = () => {
           }}
         >
           <Route exact path='/'>
-            <button onClick={handleLogin}>Log In with Netlify</button>
-            <button onClick={handleLogout}>Log Out with Netlify</button>
-            <Home />
+            <Home user={currentUser} />
+          </Route>
+          <Route path='/login'>
+            <Login user={currentUser} />
           </Route>
           <Route path='/list'>
             <CharacterList />
