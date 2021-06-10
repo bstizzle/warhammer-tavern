@@ -11,12 +11,14 @@ const Armor = () => {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
+      width: '15%',
       editable: true
     },
     {
       title: 'Location',
       dataIndex: 'location',
       key: 'location',
+      width: '15%',
       editable: true
     },
     {
@@ -35,6 +37,7 @@ const Armor = () => {
       title: 'Qualities',
       dataIndex: 'qualities',
       key: 'qualities',
+      width: '40%',
       editable: true
     }
   ]

@@ -17,12 +17,14 @@ const BscSkills = () => {
     {
       title: 'Basic Skills',
       dataIndex: 'name',
-      key: 'name'
+      key: 'name',
+      width: '40%'
     },
     {
       title: 'Stat',
       dataIndex: 'stat',
-      key: 'stat'
+      key: 'stat',
+      width: '15%'
     },
     {
       title: 'Adv',
@@ -33,7 +35,8 @@ const BscSkills = () => {
     {
       title: 'Total',
       dataIndex: 'total',
-      key: 'total'
+      key: 'total',
+      width: '15%'
     }
   ]
 

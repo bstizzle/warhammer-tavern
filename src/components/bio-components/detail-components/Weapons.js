@@ -11,6 +11,7 @@ const Weapons = () => {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
+      width: '30%',
       editable: true
     },
     {
@@ -29,6 +30,7 @@ const Weapons = () => {
       title: 'Qualities',
       dataIndex: 'qualities',
       key: 'qualities',
+      width: '40%',
       editable: true
     }
   ]

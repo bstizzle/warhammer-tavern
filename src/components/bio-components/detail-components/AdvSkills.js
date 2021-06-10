@@ -18,6 +18,7 @@ const AdvSkills = () => {
       title: 'Advanced Skills',
       dataIndex: 'name',
       key: 'name',
+      width: '40%',
       editable: true
     },
     {
@@ -35,7 +36,8 @@ const AdvSkills = () => {
     {
       title: 'Total',
       dataIndex: 'total',
-      key: 'total'
+      key: 'total',
+      width: '15%'
     }
   ]
 

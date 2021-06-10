@@ -12,6 +12,7 @@ const Talents = () => {
       title: 'Talents',
       dataIndex: 'name',
       key: 'name',
+      width: '70%',
       editable: true
     },
     {
