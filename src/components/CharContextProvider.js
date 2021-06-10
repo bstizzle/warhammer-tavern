@@ -6,7 +6,7 @@ import gql from 'graphql-tag';
 export const CharContext = React.createContext(null);
 
 const GET_CHARACTER = gql`
-  query Character($id: ID){
+  query character($id: ID){
     character(id: $id){
       _id
       bio {

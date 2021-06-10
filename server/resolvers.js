@@ -12,7 +12,8 @@ const resolvers = {
         })
     },
     character (parent, args, context, info) {
-      return Character.findOne({ _id: args.id })
+      const id = args.id
+      return Character.findOne({ _id: id })
         .then (character => {
           return { ...character._doc }
         })
