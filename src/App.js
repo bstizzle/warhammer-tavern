@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 
 import { CharContextProvider } from './components/CharContextProvider';
@@ -15,7 +15,6 @@ import { Layout } from 'antd';
 const { Header, Sider, Footer, Content} = Layout;
 
 const App = () => {
-  const [charId, setCharId] = useState("60bfb775ef024a09d4a2c8c3")
   return (
     <Layout style={{minHeight: '100vh'}}>
       <Header>
@@ -30,10 +29,10 @@ const App = () => {
             <Home />
           </Route>
           <Route path='/list'>
-            <CharacterList setCharId={setCharId} />
+            <CharacterList />
           </Route>
-          <Route path='/sheet'>
-            <CharContextProvider id={charId}>
+          <Route path='/sheet/:id'>
+            <CharContextProvider>
               <CharacterSheet />
             </CharContextProvider>
           </Route>

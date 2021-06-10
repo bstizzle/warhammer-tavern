@@ -15,7 +15,7 @@ const GET_CHARACTERS = gql`
   }
 `
 
-const CharacterList = ({ setCharId }) => {
+const CharacterList = () => {
   const history = useHistory();
   const { loading, error, data } = useQuery(GET_CHARACTERS)
 
@@ -28,8 +28,7 @@ const CharacterList = ({ setCharId }) => {
 
   const handleRoute = (e, id) => {
     e.preventDefault();
-    setCharId(id);
-    history.push('/sheet');
+    history.push(`/sheet/${id}`);
   }
 
   return(
