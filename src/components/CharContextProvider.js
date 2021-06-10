@@ -108,7 +108,6 @@ const GET_CHARACTER = gql`
 export const CharContextProvider = props => {
   const [char, setChar] = useState(null)
   const charId = props.id
-  console.log(charId)
   const { loading, error, data } = useQuery(GET_CHARACTER, {
     variables: { id: charId }
   })
