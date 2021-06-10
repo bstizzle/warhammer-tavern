@@ -45,9 +45,8 @@ const CharacterList = () => {
     <Row gutter={20}>
       {data.characters.map(c => {
         return(
-          <Col span={6}>
+          <Col key={c._id} span={6}>
             <Card
-              key={c._id}
               style={{alignItems: 'center'}}
               actions={[
                 <span onClick={(e) => handleRoute(e, c._id)}>View Sheet</span>,

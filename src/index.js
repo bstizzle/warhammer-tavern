@@ -6,16 +6,19 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import './index.less';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-const dev = process.env.NODE_ENV !== 'production'
+import netlifyIdentity from 'netlify-identity-widget';
 
 //use local port for development, use the netlify lambda address for production
+const dev = process.env.NODE_ENV !== 'production';
 const client = new ApolloClient({
   uri: dev ? 'http://localhost:4000/graphql' : '/.netlify/functions/graphql',
   cache: new InMemoryCache({
     addTypename: false
   })
-})
+});
+
+//enable netlify auth
+netlifyIdentity.init();
 
 ReactDOM.render(
   <React.StrictMode>
