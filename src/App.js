@@ -16,8 +16,6 @@ import { Layout } from 'antd';
 const { Header, Sider, Footer, Content} = Layout;
 
 const App = () => {
-  // const [user, setUser] = useState(localStorage.getItem("currentOpenSaucedUser"));
-
   const handleLogin = (e) => {
     e.preventDefault()
     netlifyIdentity.open()
