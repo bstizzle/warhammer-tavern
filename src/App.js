@@ -24,11 +24,10 @@ const App = () => {
 
   //netlify identity listeners to set user state
   netlifyIdentity.on('login', user => {
-    console.log('login', user)
-    setCurrentUser(user)
+    netlifyIdentity.close();
+    setCurrentUser(user.id)
   })
   netlifyIdentity.on('logout', user => {
-    console.log('logout', user)
     setCurrentUser(null)
   })
 
