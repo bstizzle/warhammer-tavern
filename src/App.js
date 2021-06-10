@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 
 import { CharContextProvider } from './components/CharContextProvider';
@@ -16,7 +16,7 @@ import { Layout } from 'antd';
 const { Header, Sider, Footer, Content} = Layout;
 
 const App = () => {
-  const [user, setUser] = useState(localStorage.getItem("currentOpenSaucedUser"));
+  // const [user, setUser] = useState(localStorage.getItem("currentOpenSaucedUser"));
 
   const handleLogin = (e) => {
     e.preventDefault()
