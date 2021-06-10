@@ -3,6 +3,14 @@ import { useHistory } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import Loading from './Loading';
+import {
+  Row,
+  Col,
+  Card,
+  Avatar,
+  Typography } from 'antd';
+const { Meta } = Card;
+const { Title, Text } = Typography;
 
 const GET_CHARACTERS = gql`
   {
@@ -10,6 +18,8 @@ const GET_CHARACTERS = gql`
       _id
       bio {
         name
+        careerLevel
+        species
       }
     }
   }
@@ -32,18 +42,29 @@ const CharacterList = () => {
   }
 
   return(
-    <div>
+    <Row gutter={20}>
       {data.characters.map(c => {
         return(
-          <button
-            key={c._id}
-            onClick={(e) => handleRoute(e, c._id)}
-          >
-            {c.bio.name}: {c._id}
-          </button>
+          <Col span={6}>
+            <Card
+              key={c._id}
+              style={{alignItems: 'center'}}
+              actions={[
+                <span onClick={(e) => handleRoute(e, c._id)}>View Sheet</span>,
+                <span>Edit</span>,
+                <span>Delete</span>
+              ]}
+            >
+              <Meta
+                avatar={<Avatar size={60} src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                title={<Title level={4}>{c.bio.name}</Title>}
+                description={<Text>{c.bio.species} / {c.bio.careerLevel}</Text>}
+              />
+            </Card>
+          </Col>
         )
       })}
-    </div>
+    </Row>
   )
 }
 
