@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
+import Loading from './Loading';
 
 const GET_CHARACTERS = gql`
   {
@@ -18,7 +19,7 @@ const CharacterList = ({ setCharId }) => {
   const history = useHistory();
   const { loading, error, data } = useQuery(GET_CHARACTERS)
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>Error :(</p>;
 
   if(data){

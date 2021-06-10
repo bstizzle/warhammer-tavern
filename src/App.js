@@ -8,6 +8,7 @@ import CharacterSheet from './components/CharacterSheet';
 import Banner from './components/Banner';
 import Home from './components/Home';
 import SideBar from './components/SideBar';
+import FootBar from './components/FootBar';
 import parchment from './textures/parchment.jpg';
 // import darkParchment from './textures/dark-parchment.jpg';
 import { Layout } from 'antd';
@@ -39,7 +40,7 @@ const App = () => {
         </Content>
       </Layout>
       <Footer>
-        Created by Ben Stein
+        <FootBar />
       </Footer>
     </Layout>
   );

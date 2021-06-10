@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { Menu } from 'antd';
 
-const Home = () => {
+const SideBar = () => {
   const history = useHistory();
   const path = history.location.pathname
 
@@ -27,4 +27,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default SideBar;
