@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 
-const server = new ApolloServer({ typeDefs, resolvers, playground: true });
+const server = new ApolloServer({ typeDefs, resolvers });
 
 const MONGODB_URI = process.env.MONGODB_URI
 
