@@ -60,7 +60,9 @@ const ArmorSchema = new Schema({
 
 const WeaponSchema = new Schema({
   name: { type: String },
+  group: { type: String },
   enc: { type: Number },
+  range: { type: String },
   damage: { type: Number },
   qualities: { type: String }
 })
@@ -69,6 +71,15 @@ const TrappingSchema = new Schema({
   name: { type: String },
   amount: { type: Number },
   enc: { type: Number }
+})
+
+const SpellSchema = new Schema({
+  name: { type: String },
+  cn: { type: Number },
+  range: { type: String },
+  target: { type: String },
+  duration: { type: String },
+  effect: { type: String }
 })
 
 const CharacterSchema = new Schema({
@@ -83,7 +94,8 @@ const CharacterSchema = new Schema({
   currentWounds: { type: Number },
   armor: { type: [ArmorSchema] },
   weapons: { type: [WeaponSchema] },
-  trappings: { type: [TrappingSchema] }
+  trappings: { type: [TrappingSchema] },
+  spells: { type: [SpellSchema] }
 })
 
 const UserSchema = new Schema({

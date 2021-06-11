@@ -44,7 +44,6 @@ const options = (
 
 const EditableCell = ({ editable, children, record }) => {
   const { char, setChar } = useContext(CharContext);
-  console.log(children)
   const [field, setField] = useState(children[1].toString())
 
   useEffect(() => {

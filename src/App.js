@@ -15,15 +15,15 @@ import { Layout } from 'antd';
 const { Header, Sider, Footer, Content} = Layout;
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState(netlifyIdentity.currentUser() ? netlifyIdentity.currentUser().id : null)
 
-  const fetchLogin = () => {
-    return fetch('/.netlify/functions/identity-login')
-      .then(res => res.json())
-      .then(json => console.log(json))
-  }
+  // const fetchLogin = () => {
+  //   return fetch('/.netlify/functions/identity-login')
+  //     .then(res => res.json())
+  //     .then(json => console.log(json))
+  // }
 
-  fetchLogin()
+  // fetchLogin()
 
   //netlify identity listeners to set user state
   netlifyIdentity.on('login', user => {
@@ -34,6 +34,7 @@ const App = () => {
     setCurrentUser(null)
   })
 
+  console.log(netlifyIdentity.currentUser())
   return (
     <Layout style={{minHeight: '100vh'}}>
       <Header>

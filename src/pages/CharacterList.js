@@ -1,6 +1,5 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import netlifyIdentity from "netlify-identity-widget";
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import Loading from '../components/Loading';
@@ -29,7 +28,7 @@ const GET_CHARACTERS = gql`
 const CharacterList = () => {
   const history = useHistory();
   const { loading, error, data } = useQuery(GET_CHARACTERS)
-  console.log(netlifyIdentity.currentUser())
+
   if (loading) return <Loading />;
   if (error) return <p>Error :(</p>;
 

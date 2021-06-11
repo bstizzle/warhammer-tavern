@@ -5,7 +5,7 @@ import EditableTable from '../../table-components/EditableTable';
 const Weapons = () => {
   const { char } = useContext(CharContext);
   const weapons = char.weapons;
-  console.log(weapons)
+  
   const columns = [
     {
       title: 'Name',

@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Row, Col, Typography, Button } from 'antd';
 const { Title } = Typography;
 
 const Home = ({ user }) => {
   const history = useHistory();
-  useEffect(() => {
-    if(!user) {
-      history.push("/login")
-    }
-  })
+  // useEffect(() => {
+  //   if(!user) {
+  //     history.push("/login")
+  //   }
+  // })
 
   function handleClick(e) {
     if(e.target.innerHTML === 'View Characters'){

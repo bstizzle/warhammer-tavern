@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-lambda');
+const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
 
@@ -62,7 +62,9 @@ const typeDefs = gql`
 
   type Weapon {
     name: String
+    group: String
     enc: Int
+    range: String
     damage: Int
     qualities: String
   }
@@ -71,6 +73,15 @@ const typeDefs = gql`
     name: String
     amount: Int
     enc: Int
+  }
+
+  type Spell {
+    name: String
+    cn: Int
+    range: String
+    target: String
+    duration: String
+    effect: String
   }
 
   type Character {
@@ -87,6 +98,7 @@ const typeDefs = gql`
     armor: [Armor]
     weapons: [Weapon]
     trappings: [Trapping]
+    spells: [Spell]
   }
 
   type User {
@@ -161,7 +173,9 @@ const typeDefs = gql`
 
   input WeaponInput {
     name: String
+    group: String
     enc: Int
+    range: String
     damage: Int
     qualities: String
   }
@@ -170,6 +184,15 @@ const typeDefs = gql`
     name: String
     amount: Int
     enc: Int
+  }
+
+  input SpellInput {
+    name: String
+    cn: Int
+    range: String
+    target: String
+    duration: String
+    effect: String
   }
 
   input CharacterInput {
@@ -184,6 +207,7 @@ const typeDefs = gql`
     armor: [ArmorInput]
     weapons: [WeaponInput]
     trappings: [TrappingInput]
+    spells: [SpellInput]
   }
 
   type Mutation {
