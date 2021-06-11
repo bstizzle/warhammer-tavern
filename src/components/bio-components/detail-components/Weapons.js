@@ -5,19 +5,32 @@ import EditableTable from '../../table-components/EditableTable';
 const Weapons = () => {
   const { char } = useContext(CharContext);
   const weapons = char.weapons;
-
+  console.log(weapons)
   const columns = [
     {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      width: '30%',
+      width: '20%',
+      editable: true
+    },
+    {
+      title: 'Group',
+      dataIndex: 'group',
+      key: 'group',
+      width: '10%',
       editable: true
     },
     {
       title: 'Enc',
       dataIndex: 'enc',
       key: 'enc',
+      editable: true
+    },
+    {
+      title: 'Range',
+      dataIndex: 'range',
+      key: 'range',
       editable: true
     },
     {
@@ -42,7 +55,9 @@ const Weapons = () => {
       key: i,
       type: 'weapon',
       name: w.name,
+      group: w.group,
       enc: w.enc,
+      range: w.range,
       damage: w.damage,
       qualities: w.qualities
     })

@@ -60,7 +60,9 @@ const ArmorSchema = new Schema({
 
 const WeaponSchema = new Schema({
   name: { type: String },
+  group: { type: String },
   enc: { type: Number },
+  range: { type: String },
   damage: { type: Number },
   qualities: { type: String }
 })

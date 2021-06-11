@@ -93,7 +93,9 @@ const GET_CHARACTER = gql`
       }
       weapons {
         name
+        group
         enc
+        range
         damage
         qualities
       }

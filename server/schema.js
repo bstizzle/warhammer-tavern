@@ -62,7 +62,9 @@ const typeDefs = gql`
 
   type Weapon {
     name: String
+    group: String
     enc: Int
+    range: String
     damage: Int
     qualities: String
   }
@@ -171,7 +173,9 @@ const typeDefs = gql`
 
   input WeaponInput {
     name: String
+    group: String
     enc: Int
+    range: String
     damage: Int
     qualities: String
   }

@@ -55,7 +55,6 @@ const CharacterSheet = () => {
           Armor Points
           Psychology
           Corruption/Mutation
-          Wealth
           Encumberance
         */}
       </Row>
