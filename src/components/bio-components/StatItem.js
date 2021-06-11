@@ -38,8 +38,24 @@ const StatItem = ({ s, stats }) => {
       key={s}
       content={
         <>
-        Initial: <InputNumber style={{maxWidth: '60px'}} size="small" min={0} max={99} defaultValue={init} onChange={setInit} /> | Adv: <InputNumber style={{maxWidth: '60px'}} size="small" min={0} max={99} defaultValue={adv} onChange={setAdv} />
-        </>}
+        Initial: <InputNumber 
+          style={{maxWidth: '60px'}} 
+          size="small"
+          min={0}
+          max={99}
+          defaultValue={init}
+          onChange={setInit}
+        /> | 
+        Adv: <InputNumber
+          style={{maxWidth: '60px'}}
+          size="small"
+          min={0}
+          max={99}
+          defaultValue={adv}
+          onChange={setAdv}
+        />
+        </>
+      }
       title={s}
       trigger="click"
       visible={visible}

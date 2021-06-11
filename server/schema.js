@@ -73,6 +73,15 @@ const typeDefs = gql`
     enc: Int
   }
 
+  type Spell {
+    name: String
+    cn: Int
+    range: String
+    target: String
+    duration: String
+    effect: String
+  }
+
   type Character {
     _id: String
     userId: String  
@@ -87,6 +96,7 @@ const typeDefs = gql`
     armor: [Armor]
     weapons: [Weapon]
     trappings: [Trapping]
+    spells: [Spell]
   }
 
   type User {
@@ -172,6 +182,15 @@ const typeDefs = gql`
     enc: Int
   }
 
+  input SpellInput {
+    name: String
+    cn: Int
+    range: String
+    target: String
+    duration: String
+    effect: String
+  }
+
   input CharacterInput {
     bio: BioInput
     stats: StatsInput
@@ -184,6 +203,7 @@ const typeDefs = gql`
     armor: [ArmorInput]
     weapons: [WeaponInput]
     trappings: [TrappingInput]
+    spells: [SpellInput]
   }
 
   type Mutation {

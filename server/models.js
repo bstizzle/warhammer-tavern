@@ -71,6 +71,15 @@ const TrappingSchema = new Schema({
   enc: { type: Number }
 })
 
+const SpellSchema = new Schema({
+  name: { type: String },
+  cn: { type: Number },
+  range: { type: String },
+  target: { type: String },
+  duration: { type: String },
+  effect: { type: String }
+})
+
 const CharacterSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   bio: { type: BioSchema },
@@ -83,7 +92,8 @@ const CharacterSchema = new Schema({
   currentWounds: { type: Number },
   armor: { type: [ArmorSchema] },
   weapons: { type: [WeaponSchema] },
-  trappings: { type: [TrappingSchema] }
+  trappings: { type: [TrappingSchema] },
+  spells: { type: [SpellSchema] }
 })
 
 const UserSchema = new Schema({

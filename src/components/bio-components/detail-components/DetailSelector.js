@@ -5,6 +5,7 @@ import Talents from './Talents';
 import Trappings from './Trappings';
 import Armor from './Armor';
 import Weapons from './Weapons';
+import Spells from './Spells';
 
 import { Tabs } from 'antd'
 const { TabPane } = Tabs;
@@ -33,6 +34,9 @@ const DetailSelector = () => {
         </TabPane>
         <TabPane tab="Weapons" key="Weapons">
           <Weapons />
+        </TabPane>
+        <TabPane tab="Spells&Prayers" key="Spells&Prayers">
+          <Spells />
         </TabPane>
     </Tabs>
   );
