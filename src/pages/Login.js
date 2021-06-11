@@ -1,17 +1,9 @@
-import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
 import netlifyIdentity from 'netlify-identity-widget';
 import { Col, Typography, Button } from 'antd';
 const { Title } = Typography;
 
-const Login = ({ user }) => {
-  const history = useHistory();
-  useEffect(() => {
-    if(user) {
-      history.push("/")
-    }
-  })
-
+const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault()
     netlifyIdentity.open()

@@ -1,15 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import netlifyIdentity from "netlify-identity-widget";
 import { Row, Col, Typography, Button } from 'antd';
 const { Title } = Typography;
 
-const Home = ({ user }) => {
+const Home = () => {
   const history = useHistory();
-  // useEffect(() => {
-  //   if(!user) {
-  //     history.push("/login")
-  //   }
-  // })
+  const user = netlifyIdentity.currentUser();
 
   function handleClick(e) {
     if(e.target.innerHTML === 'View Characters'){
@@ -20,7 +17,7 @@ const Home = ({ user }) => {
   return(
     <Col>
       <Row>
-        <Title>Welcome to the hall, {user}</Title>
+        <Title>Welcome to the hall, {user.user_metadata.full_name}!</Title>
       </Row>
       <Row gutter={10}>
         <Col>
