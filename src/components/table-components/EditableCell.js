@@ -44,7 +44,9 @@ const options = (
 
 const EditableCell = ({ editable, children, record }) => {
   const { char, setChar } = useContext(CharContext);
-  const [field, setField] = useState(children[1].toString())
+  const [field, setField] = useState(children[1].toString());
+
+  let stats = Object.keys(char.stats);
 
   useEffect(() => {
     if(record.type === 'bscSkill') {
@@ -64,7 +66,7 @@ const EditableCell = ({ editable, children, record }) => {
   if(editable){
     if(parseInt(field, 10) >= 0){
       childNode = <InputNumber size="small" style={{maxWidth: '40%'}} min={0} max={99} defaultValue={field} onChange={setField} />
-    } else if(0 < field.length && field.length <= 3) {
+    } else if(stats.includes(field)) {
       childNode = <Select size="small" defaultValue={field} onChange={setField}>{options}</Select>
     } else {
       childNode = <Text editable={{onChange: setField}}>{field}</Text>
