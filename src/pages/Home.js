@@ -7,7 +7,7 @@ const { Title } = Typography;
 const Home = () => {
   const history = useHistory();
   const user = netlifyIdentity.currentUser();
-
+  console.log(user)
   function handleClick(e) {
     if(e.target.innerHTML === 'View Characters'){
       history.push('/list')
