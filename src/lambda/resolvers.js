@@ -3,6 +3,7 @@ const { Character, User } = require('./models');
 const resolvers = {
   Query: {
     characters (parent, args, context, info) {
+      console.log('all chars query')
       return Character.find()
         .then (character => {
             return character.map (c => ({ ...c._doc }))
@@ -13,6 +14,7 @@ const resolvers = {
     },
     character (parent, args, context, info) {
       const id = args.id
+      console.log('one char query')
       return Character.findOne({ _id: id })
         .then (character => {
           return { ...character._doc }
@@ -61,6 +63,7 @@ const resolvers = {
         trappings,
         spells
       })
+      console.log('new char mutation')
       return charObj.save()
         .then(result => {
           return { ...result._doc}
@@ -80,7 +83,7 @@ const resolvers = {
       charObj.fate = input.fate
       charObj.resolve = input.resolve
       charObj.currentWounds = input.currentWounds
-
+      console.log('update char mutation')
       return charObj.save()
         .then(result => {
           return { ...result._doc}
