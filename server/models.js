@@ -83,7 +83,8 @@ const SpellSchema = new Schema({
 })
 
 const CharacterSchema = new Schema({
-  userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+  //userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+  userId: { type: String, required: true},
   bio: { type: BioSchema },
   stats: { type: StatsSchema },
   basicSkills: { type: [SkillSchema] },
