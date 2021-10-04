@@ -82,6 +82,11 @@ const SpellSchema = new Schema({
   effect: { type: String }
 })
 
+const ExpSchema = new Schema({
+  current: { type: Number },
+  spent: { type: Number } 
+})
+
 const CharacterSchema = new Schema({
   //userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   userId: { type: String, required: true},
@@ -96,7 +101,8 @@ const CharacterSchema = new Schema({
   armor: { type: [ArmorSchema] },
   weapons: { type: [WeaponSchema] },
   trappings: { type: [TrappingSchema] },
-  spells: { type: [SpellSchema] }
+  spells: { type: [SpellSchema] },
+  exp: { type: [ExpSchema] }
 })
 
 const UserSchema = new Schema({

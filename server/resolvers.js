@@ -45,7 +45,7 @@ const resolvers = {
       const userId = args.userId
       const { bio, stats, basicSkills, advSkills, 
         talents, fate, resolve, currentWounds,
-        armor, weapons, trappings, spells } = args.input
+        armor, weapons, trappings, spells, exp } = args.input
       const charObj = new Character({
         userId,
         bio,
@@ -59,7 +59,8 @@ const resolvers = {
         armor,
         weapons,
         trappings,
-        spells
+        spells,
+        exp
       })
       return charObj.save()
         .then(result => {

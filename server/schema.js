@@ -84,6 +84,11 @@ const typeDefs = gql`
     effect: String
   }
 
+  type Exp {
+    current: Int
+    spent: Int
+  }
+
   type Character {
     _id: String
     userId: String  
@@ -99,6 +104,7 @@ const typeDefs = gql`
     weapons: [Weapon]
     trappings: [Trapping]
     spells: [Spell]
+    exp: Exp
   }
 
   type User {
@@ -195,6 +201,11 @@ const typeDefs = gql`
     effect: String
   }
 
+  input ExpInput {
+    current: Int
+    spent: Int
+  }
+
   input CharacterInput {
     bio: BioInput
     stats: StatsInput
@@ -208,6 +219,7 @@ const typeDefs = gql`
     weapons: [WeaponInput]
     trappings: [TrappingInput]
     spells: [SpellInput]
+    exp: ExpInput
   }
 
   type Mutation {
