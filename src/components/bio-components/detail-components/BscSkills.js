@@ -44,6 +44,7 @@ const BscSkills = () => {
   const bscData1 = []
   const bscData2 = []
   basicSkills.forEach(k => {
+    console.log(k)
     const total = totalSkill(k.stat, k.adv)
     if(i < 13){ 
       bscData1.push({

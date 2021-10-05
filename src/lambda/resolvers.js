@@ -13,7 +13,7 @@ const resolvers = {
     },
     character (parent, args, context, info) {
       const id = args.id
-      return Character.findOne({_id: id})
+      return Character.findOne({ _id: id })
         .then (character => {
           return { ...character._doc }
         })
@@ -45,7 +45,8 @@ const resolvers = {
       const userId = args.userId
       const { bio, stats, basicSkills, advSkills, 
         talents, fate, resolve, currentWounds,
-        armor, weapons, trappings } = args.input
+        armor, weapons, trappings, spells, exp,
+        movement } = args.input
       const charObj = new Character({
         userId,
         bio,
@@ -58,7 +59,10 @@ const resolvers = {
         currentWounds,
         armor,
         weapons,
-        trappings
+        trappings,
+        spells,
+        exp,
+        movement
       })
       return charObj.save()
         .then(result => {

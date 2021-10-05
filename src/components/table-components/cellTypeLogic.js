@@ -4,7 +4,7 @@ export const isBscSkillCell = (char, setChar, record, field) => {
   const index = record.key
   const numField = parseInt(field, 10)
   //makes sure we don't overwrite the adv value when total updates
-  if(numField !== record.total) {
+  if(numField === 0 || numField !== record.total) {
     const updatedBasics = char.basicSkills
     updatedBasics.splice(index, 1, {
       name: record.name,

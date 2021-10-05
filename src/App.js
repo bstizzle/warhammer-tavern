@@ -15,20 +15,12 @@ import { Layout } from 'antd';
 const { Header, Sider, Footer, Content} = Layout;
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState(null)
-
-  const fetchLogin = () => {
-    return fetch('/.netlify/functions/identity-login')
-      .then(res => res.json())
-      .then(json => console.log(json))
-  }
-
-  fetchLogin()
+  const [currentUser, setCurrentUser] = useState(netlifyIdentity.currentUser())
 
   //netlify identity listeners to set user state
   netlifyIdentity.on('login', user => {
     netlifyIdentity.close();
-    setCurrentUser(user.id)
+    setCurrentUser(user)
   })
   netlifyIdentity.on('logout', user => {
     setCurrentUser(null)
@@ -51,18 +43,30 @@ const App = () => {
           }}
         >
           <Route exact path='/'>
-            <Home user={currentUser} />
+            {currentUser ?
+              <Home />
+              :
+              <Login />
+            }
           </Route>
           <Route path='/login'>
-            <Login user={currentUser} />
+            <Login />
           </Route>
           <Route path='/list'>
-            <CharacterList />
+            {currentUser ?
+              <CharacterList />
+              :
+              <Login />
+            }
           </Route>
           <Route path='/sheet/:id'>
-            <CharContextProvider>
-              <CharacterSheet />
-            </CharContextProvider>
+            {currentUser ?
+              <CharContextProvider>
+                <CharacterSheet />
+              </CharContextProvider>
+              :
+              <Login />
+            }
           </Route>
         </Content>
       </Layout>

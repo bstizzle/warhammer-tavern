@@ -104,6 +104,11 @@ const GET_CHARACTER = gql`
         amount
         enc
       }
+      exp {
+        current
+        spent
+      }
+      movement
     }
   }
 `
