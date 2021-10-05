@@ -108,6 +108,7 @@ const GET_CHARACTER = gql`
         current
         spent
       }
+      movement
     }
   }
 `

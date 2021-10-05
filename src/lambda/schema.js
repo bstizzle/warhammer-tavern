@@ -220,6 +220,7 @@ const typeDefs = gql`
     trappings: [TrappingInput]
     spells: [SpellInput]
     exp: ExpInput
+    movement: Int
   }
 
   type Mutation {

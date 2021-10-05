@@ -105,6 +105,7 @@ const typeDefs = gql`
     trappings: [Trapping]
     spells: [Spell]
     exp: Exp
+    movement: Int
   }
 
   type User {
@@ -220,6 +221,7 @@ const typeDefs = gql`
     trappings: [TrappingInput]
     spells: [SpellInput]
     exp: ExpInput
+    movement: Int
   }
 
   type Mutation {

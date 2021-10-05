@@ -60,7 +60,8 @@ const resolvers = {
         weapons,
         trappings,
         spells,
-        exp
+        exp,
+        movement
       })
       return charObj.save()
         .then(result => {

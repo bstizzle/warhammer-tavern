@@ -765,6 +765,7 @@ const ADD_CHARACTER = gql`
           current: 0,
           spent: 0
         }
+        movement: 0
       }
     ){
       userId,
