@@ -89,6 +89,10 @@ const typeDefs = gql`
     spent: Int
   }
 
+  type Misc {
+    text: String
+  }
+
   type Character {
     _id: String
     userId: String  
@@ -106,6 +110,7 @@ const typeDefs = gql`
     spells: [Spell]
     exp: Exp
     movement: Int
+    misc: [Misc]
   }
 
   type User {
@@ -207,6 +212,10 @@ const typeDefs = gql`
     spent: Int
   }
 
+  input MiscInput {
+    text: String
+  }
+
   input CharacterInput {
     bio: BioInput
     stats: StatsInput
@@ -222,6 +231,7 @@ const typeDefs = gql`
     spells: [SpellInput]
     exp: ExpInput
     movement: Int
+    misc: [MiscInput]
   }
 
   type Mutation {

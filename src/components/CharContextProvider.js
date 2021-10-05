@@ -117,6 +117,9 @@ const GET_CHARACTER = gql`
         duration
         effect
       }
+      misc {
+        text
+      }
     }
   }
 `
@@ -136,7 +139,7 @@ export const CharContextProvider = props => {
     if(char === null){
       setChar(data.character)
     }
-    
+
     return(
       <CharContext.Provider value={{char, setChar}}>
         {props.children}

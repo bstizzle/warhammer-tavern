@@ -246,7 +246,7 @@ const ADD_CHARACTER = gql`
             name: "Stealth ()"
             stat: "Ag"
             adv: 0
-          },
+          }
         ],
         advSkills: [
           {
@@ -866,12 +866,92 @@ const ADD_CHARACTER = gql`
             duration: "",
             effect: ""
           }
-        ]
+        ],
         exp: {
           current: 0,
           spent: 0
-        }
-        movement: 0
+        },
+        movement: 0,
+        misc: [
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          }
+        ]
       }
     ){
       userId,

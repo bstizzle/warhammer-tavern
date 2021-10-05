@@ -66,19 +66,6 @@ const Spells = () => {
     })
     i++;
   })
-  // while(i < 13){
-  //   spellData.push({
-  //     key: i,
-  //     type: 'spell',
-  //     name: 'name',
-  //     cn: 0,
-  //     range: 'x range',
-  //     target: 'x radius',
-  //     duration: 'x duration',
-  //     effect: 'x effect'
-  //   })
-  //   i++
-  // }
 
   return(
     <EditableTable data={spellData} columns={columns} />

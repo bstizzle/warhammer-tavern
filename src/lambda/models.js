@@ -87,6 +87,10 @@ const ExpSchema = new Schema({
   spent: { type: Number } 
 })
 
+const MiscSchema = new Schema({
+  text: { type: String }
+})
+
 const CharacterSchema = new Schema({
   //userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   userId: { type: String, required: true},
@@ -103,7 +107,8 @@ const CharacterSchema = new Schema({
   trappings: { type: [TrappingSchema] },
   spells: { type: [SpellSchema] },
   exp: { type: ExpSchema },
-  movement: { type: Number }
+  movement: { type: Number },
+  misc: { type: [MiscSchema] }
 })
 
 const UserSchema = new Schema({
