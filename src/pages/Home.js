@@ -247,7 +247,7 @@ const ADD_CHARACTER = gql`
             stat: "Ag"
             adv: 0
           },
-        ]
+        ],
         advSkills: [
           {
             name: ""
@@ -379,7 +379,7 @@ const ADD_CHARACTER = gql`
             stat: "WS"
             adv: 0
           }
-        ]
+        ],
         talents: [
           {
             name: ""
@@ -760,7 +760,11 @@ const ADD_CHARACTER = gql`
             amount: 0,
             enc: 0
           }
-        ]
+        ],
+        exp: {
+          current: 0,
+          spent: 0
+        }
       }
     ){
       userId,

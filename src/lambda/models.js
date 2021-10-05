@@ -102,7 +102,7 @@ const CharacterSchema = new Schema({
   weapons: { type: [WeaponSchema] },
   trappings: { type: [TrappingSchema] },
   spells: { type: [SpellSchema] },
-  exp: { type: [ExpSchema] }
+  exp: { type: ExpSchema }
 })
 
 const UserSchema = new Schema({
