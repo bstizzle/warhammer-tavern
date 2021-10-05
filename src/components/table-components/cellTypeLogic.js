@@ -2,19 +2,22 @@ const statKeyStr = 'WSBSSTIAgDexIntWPFel'
 
 export const isBscSkillCell = (char, setChar, record, field) => {
   const index = record.key
+  const numField = parseInt(field, 10)
   //makes sure we don't overwrite the adv value when total updates
-  if(Number.isInteger(parseInt(field, 10))) {
-    const updatedBasics = char.basicSkills
-    updatedBasics.splice(index, 1, {
-      name: record.name,
-      stat: record.stat,
-      adv: parseInt(field, 10)
-    })
-    console.log('is bsc skill advance!')
-    setChar(char => ({
-      ...char,
-      basicSkills: updatedBasics
-    }))
+  if(Number.isInteger(numField)) {
+    if(numField === 0 || numField !== record.total) {
+      const updatedBasics = char.basicSkills
+      updatedBasics.splice(index, 1, {
+        name: record.name,
+        stat: record.stat,
+        adv: parseInt(field, 10)
+      })
+      console.log('is bsc skill advance!')
+      setChar(char => ({
+        ...char,
+        basicSkills: updatedBasics
+      }))
+    }
   }
 }
 
