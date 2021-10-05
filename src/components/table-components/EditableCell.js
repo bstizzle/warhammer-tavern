@@ -1,7 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react';
 
 import { isBscSkillCell, isAdvSkillCell, isTalentCell,
-  isTrappingCell } from './cellTypeLogic';
+  isTrappingCell, isArmorCell, isWeaponCell,
+  isSpellCell, isMiscCell } from './cellTypeLogic';
 
 import { CharContext } from '../CharContextProvider';
 import { Typography, InputNumber, Select } from 'antd';
@@ -57,14 +58,15 @@ const EditableCell = ({ editable, children, record }) => {
       isTalentCell(char, setChar, record, field)
     } else if(record.type === 'trapping') {
       isTrappingCell(char, setChar, record, field)
-    } 
-    // else if(record.type === 'armor') {
-    //   isArmorCell(char, setChar, record, field)
-    // } else if(record.type === 'weapon') {
-    //   isWeaponCell(char, setChar, record, field)
-    // } else if(record.type === 'spell') {
-    //   isSpellCell(char, setChar, record, field)
-    // }
+    } else if(record.type === 'armor') {
+      isArmorCell(char, setChar, record, field)
+    } else if(record.type === 'weapon') {
+      isWeaponCell(char, setChar, record, field)
+    } else if(record.type === 'spell') {
+      isSpellCell(char, setChar, record, field)
+    } else if(record.type === 'misc') {
+      isMiscCell(char, setChar, record, field)
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [field])
   //filling this dependency array with what React wants creates untenable lag

@@ -91,7 +91,8 @@ const CharacterSheet = () => {
                   trappings: char.trappings,
                   spells: char.spells,
                   exp: char.exp,
-                  movement: char.movement
+                  movement: char.movement,
+                  misc: char.misc
                 }
               }
             })

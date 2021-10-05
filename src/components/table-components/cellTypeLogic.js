@@ -82,6 +82,7 @@ export const isTalentCell = (char, setChar, record, field) => {
   }))
 }
 
+//need logic for differentiating between amount and enc fields
 export const isTrappingCell = (char, setChar, record, field) => {
   const index = record.key;
   const updatedTrappings = char.trappings;
@@ -104,5 +105,84 @@ export const isTrappingCell = (char, setChar, record, field) => {
   setChar(char => ({
     ...char,
     trappings: updatedTrappings
+  }))
+}
+
+//need logic for differentiating between different text and number fields
+export const isArmorCell = (char, setChar, record, field) => {
+  const index = record.key;
+  const updatedArmor = char.armor;
+
+  if(Number.isInteger(parseInt(field, 10))) {
+    console.log('is armor enc')
+    updatedArmor.splice(index, 1, {
+      name: record.name,
+      location: record.location,
+      enc: parseInt(field, 10),
+      ap: record.ap,
+      qualities: record.qualities
+    })
+  } else if(field !== "") {
+    console.log('is armor name')
+    updatedArmor.splice(index, 1, {
+      name: field,
+      location: record.location,
+      enc: record.enc,
+      ap: record.ap,
+      qualities: record.qualities
+    })
+  }
+  setChar(char => ({
+    ...char,
+    armor: updatedArmor
+  }))
+}
+
+//need logic for differentiating between different text and number fields
+export const isWeaponCell = (char, setChar, record, field) => {
+  const index = record.key;
+  const updatedWeapons = char.weapons;
+
+  if(Number.isInteger(parseInt(field, 10))) {
+    console.log('is weapon enc')
+    updatedWeapons.splice(index, 1, {
+      name: record.name,
+      group: record.group,
+      enc: parseInt(field, 10),
+      range: record.range,
+      damage: record.damage,
+      qualities: record.qualities
+    })
+  } else if(field !== "") {
+    console.log('is weapon name')
+    updatedWeapons.splice(index, 1, {
+      name: field,
+      group: record.group,
+      enc: record.enc,
+      range: record.range,
+      damage: record.damage,
+      qualities: record.qualities
+    })
+  }
+  setChar(char => ({
+    ...char,
+    weapons: updatedWeapons
+  }))
+}
+
+export const isSpellCell = (char, setChar, record, field) => {
+
+}
+
+export const isMiscCell = (char, setChar, record, field) => {
+  const index = record.key;
+  const updatedMisc = char.misc;
+
+  updatedMisc.splice(index, 1, {
+    text: field
+  })
+  setChar(char => ({
+    ...char,
+    misc: updatedMisc
   }))
 }
