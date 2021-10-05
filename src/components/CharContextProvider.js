@@ -109,6 +109,14 @@ const GET_CHARACTER = gql`
         spent
       }
       movement
+      spells {
+        name
+        cn
+        range
+        target
+        duration
+        effect
+      }
     }
   }
 `

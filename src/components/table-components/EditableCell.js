@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 
-import { isBscSkillCell, isAdvSkillCell, isTalentCell } from './cellTypeLogic';
+import { isBscSkillCell, isAdvSkillCell, isTalentCell,
+  isTrappingCell } from './cellTypeLogic';
 
 import { CharContext } from '../CharContextProvider';
 import { Typography, InputNumber, Select } from 'antd';
@@ -45,7 +46,6 @@ const options = (
 const EditableCell = ({ editable, children, record }) => {
   const { char, setChar } = useContext(CharContext);
   const [field, setField] = useState(children[1].toString());
-
   let stats = Object.keys(char.stats);
 
   useEffect(() => {
@@ -55,7 +55,16 @@ const EditableCell = ({ editable, children, record }) => {
       isAdvSkillCell(char, setChar, record, field)
     } else if(record.type === 'talent') {
       isTalentCell(char, setChar, record, field)
-    }
+    } else if(record.type === 'trapping') {
+      isTrappingCell(char, setChar, record, field)
+    } 
+    // else if(record.type === 'armor') {
+    //   isArmorCell(char, setChar, record, field)
+    // } else if(record.type === 'weapon') {
+    //   isWeaponCell(char, setChar, record, field)
+    // } else if(record.type === 'spell') {
+    //   isSpellCell(char, setChar, record, field)
+    // }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [field])
   //filling this dependency array with what React wants creates untenable lag

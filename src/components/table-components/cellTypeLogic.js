@@ -2,14 +2,13 @@ const statKeyStr = 'WSBSSTIAgDexIntWPFel'
 
 export const isBscSkillCell = (char, setChar, record, field) => {
   const index = record.key
-  const numField = parseInt(field, 10)
   //makes sure we don't overwrite the adv value when total updates
-  if(numField === 0 || numField !== record.total) {
+  if(Number.isInteger(parseInt(field, 10))) {
     const updatedBasics = char.basicSkills
     updatedBasics.splice(index, 1, {
       name: record.name,
       stat: record.stat,
-      adv: numField
+      adv: parseInt(field, 10)
     })
     console.log('is bsc skill advance!')
     setChar(char => ({
@@ -62,22 +61,45 @@ export const isTalentCell = (char, setChar, record, field) => {
   const updatedTalents = char.talents
   //check whether we are updating the name or the times
   if(Number.isInteger(parseInt(field, 10))) {
-    console.log('is number')
+    console.log('is talent number')
     updatedTalents.splice(index, 1, {
       name: record.name,
       times: parseInt(field, 10)
     })
-    console.log(updatedTalents)
   } else {
-    console.log('is name')
+    console.log('is talent name')
     updatedTalents.splice(index, 1, {
       name: field,
       times: record.times
     })
-    console.log(updatedTalents)
   }
   setChar(char => ({
     ...char,
     talents: updatedTalents
+  }))
+}
+
+export const isTrappingCell = (char, setChar, record, field) => {
+  const index = record.key;
+  const updatedTrappings = char.trappings;
+
+  if(Number.isInteger(parseInt(field, 10))) {
+    console.log('is trapping amount')
+    updatedTrappings.splice(index, 1, {
+      name: record.name,
+      amount: parseInt(field, 10),
+      enc: record.enc
+    })
+  } else {
+    console.log('is trapping name')
+    updatedTrappings.splice(index, 1, {
+      name: field,
+      amount: record.amount,
+      enc: record.enc
+    })
+  }
+  setChar(char => ({
+    ...char,
+    trappings: updatedTrappings
   }))
 }

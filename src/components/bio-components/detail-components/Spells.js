@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CharContext } from '../../CharContextProvider';
 import EditableTable from '../../table-components/EditableTable';
 
 const Spells = () => {
-  // const { char } = useContext(CharContext)
-  // const spells = char.spells;
+  const { char } = useContext(CharContext)
+  const spells = char.spells;
 
   const columns = [
     {
@@ -52,32 +53,32 @@ const Spells = () => {
 
   let i = 0
   const spellData = []
-  // spells.forEach(s => {
-  //   spellData.push({
-  //     key: i,
-  //     type: 'spell',
-  //     name: s.name,
-  //     cn: s.cn,
-  //     range: s.range,
-  //     target: s.target,
-  //     duration: s.duration,
-  //     effect: s.effect
-  //   })
-  //   i++;
-  // })
-  while(i < 13){
+  spells.forEach(s => {
     spellData.push({
       key: i,
       type: 'spell',
-      name: 'name',
-      cn: 0,
-      range: 'x range',
-      target: 'x radius',
-      duration: 'x duration',
-      effect: 'x effect'
+      name: s.name,
+      cn: s.cn,
+      range: s.range,
+      target: s.target,
+      duration: s.duration,
+      effect: s.effect
     })
-    i++
-  }
+    i++;
+  })
+  // while(i < 13){
+  //   spellData.push({
+  //     key: i,
+  //     type: 'spell',
+  //     name: 'name',
+  //     cn: 0,
+  //     range: 'x range',
+  //     target: 'x radius',
+  //     duration: 'x duration',
+  //     effect: 'x effect'
+  //   })
+  //   i++
+  // }
 
   return(
     <EditableTable data={spellData} columns={columns} />

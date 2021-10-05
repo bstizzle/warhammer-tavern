@@ -83,6 +83,12 @@ const resolvers = {
       charObj.fate = input.fate
       charObj.resolve = input.resolve
       charObj.currentWounds = input.currentWounds
+      charObj.armor = input.armor
+      charObj.weapons = input.weapons
+      charObj.trappings = input.trappings
+      charObj.spells = input.spells
+      charObj.exp = input.exp
+      charObj.movement = input.movement
 
       return charObj.save()
         .then(result => {

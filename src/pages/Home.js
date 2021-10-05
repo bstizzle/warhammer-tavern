@@ -761,6 +761,112 @@ const ADD_CHARACTER = gql`
             enc: 0
           }
         ],
+        spells: [
+          {
+            name: "",
+            cn: 0,
+            range: "",
+            target: "",
+            duration: "",
+            effect: ""
+          },
+          {
+            name: "",
+            cn: 0,
+            range: "",
+            target: "",
+            duration: "",
+            effect: ""
+          },
+          {
+            name: "",
+            cn: 0,
+            range: "",
+            target: "",
+            duration: "",
+            effect: ""
+          },
+          {
+            name: "",
+            cn: 0,
+            range: "",
+            target: "",
+            duration: "",
+            effect: ""
+          },
+          {
+            name: "",
+            cn: 0,
+            range: "",
+            target: "",
+            duration: "",
+            effect: ""
+          },
+          {
+            name: "",
+            cn: 0,
+            range: "",
+            target: "",
+            duration: "",
+            effect: ""
+          },
+          {
+            name: "",
+            cn: 0,
+            range: "",
+            target: "",
+            duration: "",
+            effect: ""
+          },
+          {
+            name: "",
+            cn: 0,
+            range: "",
+            target: "",
+            duration: "",
+            effect: ""
+          },
+          {
+            name: "",
+            cn: 0,
+            range: "",
+            target: "",
+            duration: "",
+            effect: ""
+          },
+          {
+            name: "",
+            cn: 0,
+            range: "",
+            target: "",
+            duration: "",
+            effect: ""
+          },
+          {
+            name: "",
+            cn: 0,
+            range: "",
+            target: "",
+            duration: "",
+            effect: ""
+          },
+          {
+            name: "",
+            cn: 0,
+            range: "",
+            target: "",
+            duration: "",
+            effect: ""
+          },
+          {
+            name: "",
+            cn: 0,
+            range: "",
+            target: "",
+            duration: "",
+            effect: ""
+          }
+        ]
         exp: {
           current: 0,
           spent: 0
