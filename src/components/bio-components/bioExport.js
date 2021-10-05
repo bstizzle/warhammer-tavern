@@ -5,6 +5,7 @@ import Resolve from './Resolve';
 import WoundsWealth from './WoundsWealth';
 import Exp from './Exp';
 import Movement from './Movement';
+import Encumber from './Encumber';
 import DetailSelector from './detail-components/DetailSelector'
 
-export { Stats, Bio, Fate, Resolve, WoundsWealth, Exp, Movement, DetailSelector };
+export { Stats, Bio, Fate, Resolve, WoundsWealth, Exp, Movement, Encumber, DetailSelector };

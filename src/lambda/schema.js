@@ -105,6 +105,7 @@ const typeDefs = gql`
     trappings: [Trapping]
     spells: [Spell]
     exp: Exp
+    movement: Int
   }
 
   type User {

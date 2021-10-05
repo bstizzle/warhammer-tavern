@@ -45,7 +45,8 @@ const resolvers = {
       const userId = args.userId
       const { bio, stats, basicSkills, advSkills, 
         talents, fate, resolve, currentWounds,
-        armor, weapons, trappings, spells, exp } = args.input
+        armor, weapons, trappings, spells, exp,
+        movement } = args.input
       const charObj = new Character({
         userId,
         bio,

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Row, Col, Button } from 'antd';
 import { CharContext } from '../components/CharContextProvider';
-import { Stats, DetailSelector, Bio, Fate, Resolve, WoundsWealth, Exp, Movement } from '../components/bio-components/bioExport';
+import { Stats, DetailSelector, Bio, Fate, Resolve, WoundsWealth, Exp, Movement, Encumber } from '../components/bio-components/bioExport';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 
@@ -39,9 +39,7 @@ const CharacterSheet = () => {
               <Movement />
             </Col>
             <Col span={8}>
-              {
-                //encumberance
-              }
+              <Encumber />
             </Col>
             <Col span={8}>
               <Exp />
