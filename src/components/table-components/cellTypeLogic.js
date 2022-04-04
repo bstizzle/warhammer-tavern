@@ -112,7 +112,7 @@ export const isTrappingCell = (char, setChar, record, field) => {
 export const isArmorCell = (char, setChar, record, field) => {
   const index = record.key;
   const updatedArmor = char.armor;
-
+  console.log(record);
   if(Number.isInteger(parseInt(field, 10))) {
     console.log('is armor enc')
     updatedArmor.splice(index, 1, {
