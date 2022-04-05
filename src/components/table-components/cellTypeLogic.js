@@ -89,7 +89,7 @@ export const isTrappingCell = (char, setChar, record, field) => {
 
   if(Number.isInteger(parseInt(field, 10))) {
     const intField = parseInt(field, 10);
-    if(intField == record.enc) {
+    if(intField === record.enc) {
       console.log('is trapping amount')
       updatedTrappings.splice(index, 1, {
         name: record.name,
